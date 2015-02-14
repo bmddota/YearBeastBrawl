@@ -1,0 +1,79 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "hero.vfx"
+
+	//---- Cloak ----
+	F_ENABLE_CLOAK 1
+
+	//---- Detail ----
+	F_DETAIL 2 // Add Self Illum
+
+	//---- Masks ----
+	F_MASKS_1 1
+	F_MASKS_2 1
+
+	//---- Blend To Full ----
+	g_flDetailBlendToFull "0.000"
+	g_flEnvMapBlendToFull "0.000"
+	g_flMetalnessBlendToFull "0.000"
+	g_flReflectionsTintByBaseBlendToNone "0.000"
+	g_flSelfIllumBlendToFull "0.000"
+	g_flSpecularBlendToFull "0.000"
+	g_flSpecularExponentBlendToFull "0.000"
+
+	//---- Cloak ----
+	g_flCloakBlurAmount "0.005"
+	g_flCloakIntensity "0.850"
+	g_flCloakRefractAmount "0.100"
+	g_flMaterialCloakFactor "0.000"
+	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Color ----
+	g_flDiffuseModulationAmount "1.000"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor "materials/nian_dire_body_color.tga"
+
+	//---- Detail 1 ----
+	g_flDetailBlendFactor "1.000"
+	g_vDetailTexCoordOffset "[0.000 0.000]"
+	g_vDetailTexCoordScale "[5.000 5.000]"
+	TextureDetail "materials/nian_detail_fx1.tga"
+
+	//---- Fresnel ----
+	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
+	TextureFresnelWarpRim "materials/default/default_fresnelwarprim.tga"
+	TextureFresnelWarpSpec "materials/default/default_fresnelwarpspec.tga"
+
+	//---- Lighting ----
+	g_flAmbientScale "1.000"
+	g_flBloomScale "0.000"
+	g_flBloomShift "0.000"
+	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Mask 1 ----
+	TextureDetailMask "materials/nian_creep_body_masks1.tga"
+	TextureDiffuseWarpMask "materials/default/default_diffusemask.tga"
+	TextureMetalnessMask "materials/default/default_metalnessmask.tga"
+	TextureSelfIllumMask "materials/default/default_selfillummask.tga"
+
+	//---- Mask 2 ----
+	TextureRimMask "materials/default/default_rimmask.tga"
+	TextureSpecularExponent "materials/default/default_specexp.tga"
+	TextureSpecularMask "materials/nian_creep_body_masks2.tga"
+	TextureTintByBaseMask "materials/default/default_basetintmask.tga"
+
+	//---- Normal Map ----
+	TextureNormal "materials/nian_body_normal.tga"
+
+	//---- Rim ----
+	g_flRimLightScale "2.000"
+	g_vRimLightColor "[0.200000 0.400000 0.600000 0.000000]"
+
+	//---- Specular ----
+	g_flSpecularExponent "25.000"
+	g_flSpecularScale "10.000"
+	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+}

@@ -1,0 +1,8 @@
+ybb
+{
+	material materials/overviews/ybb.vmat
+	pos_x -3456
+	pos_y 3428
+	scale 6.563
+}
+

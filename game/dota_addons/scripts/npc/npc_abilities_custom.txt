@@ -1,0 +1,717 @@
+
+// Dota Abilities Override File
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	"brawl_swipe_right"
+	{
+		"ID"							"1852"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ybb_right_claw"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"5.0"
+		//"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"  "2"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities.lua"
+        		"Function"          "swipeRight"
+        		"Power"					"%power"
+				"Damage"				"%damage"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.AttackShort"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"125"
+			}
+		}
+	}
+
+	"brawl_swipe_left"
+	{
+		"ID"							"1853"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"ybb_left_claw"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"5.0"
+		//"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"  "2"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities.lua"
+        		"Function"          "swipeLeft"
+        		"Power"					"%power"
+				"Damage"				"%damage"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.AttackShort"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"125"
+			}
+		}
+	}
+
+	"brawl_leap"
+	{
+		"ID"							"1854"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"mirana_leap"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"1.5"
+		//"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_LEAP_STUN"
+		"AnimationPlaybackRate"  "1.5"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities.lua"
+        		"Function"          "leap"
+        		"Power"					"%power"
+				"Damage"				"%damage"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.AttackShort"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"100"
+			}
+		}
+	}
+
+	"brawl_tail_slam"
+	{
+		"ID"							"1855"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"holdout_blade_fury"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"8.0"
+		//"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate"  "2"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_warp.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_cracks.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_blast.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_shock.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_shock_b.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_debris_small.vpcf"
+			"particle"					"particles/brewmaster_thunder_clap_debris_large.vpcf"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities.lua"
+        		"Function"          "tailSlam"
+        		"Power"					"%power"
+				"Damage"				"%damage"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.AttackLong"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"150"
+			}
+		}
+	}
+
+	"brawl_roar"
+	{
+		"ID"							"1856"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"roshan_halloween_angry"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"525"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"10.0"
+		//"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_AREA_DENY"
+		"AnimationPlaybackRate"  "1.5"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"particle_folder"			"particles/units/heroes/hero_death_prophet"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"        "scripts/vscripts/abilities.lua"
+        		"Function"          "roar"
+        		"Power"					"%power"
+				"Damage"				"%damage"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				"ControlPoints"
+				{
+					"00" "0 0 0"
+					"01" "570 500 500"
+				}
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.GlobalSilence.Cast"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"39"
+			}
+		}
+	}
+
+	"brawl_shoot"
+	{
+		"ID"							"1857"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"disruptor_thunder_strike"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"5000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+		"AbilityChannelTime"			"1.8"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_RATTLETRAP_HOOKSHOT_START"
+		"AnimationPlaybackRate"  "0.33"
+    	"AnimationIgnoresModelScale" "1"
+		"AbilityDamage"					"0"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"particle_folder"			"particles/reflex_particles"
+			"soundfile"			"soundevents/game_sounds_cny.vsndevts"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				 "EffectName"		"CNY_Beast.Breath"
+				 "Target"			"CASTER"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_channel_start"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilities.lua"
+				"Function"				"shootStart"
+				"Target"				"POINT"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_channel_start"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilities.lua"
+				"Function"				"shootEnd"
+				"Target"				"POINT"
+				"Type"					"Finish"
+				"Power"					"%power"
+				"Damage"				"%damage"
+			}
+			"FireSound"
+			{
+				 "EffectName"		"Hero_SkywrathMage.ConcussiveShot.Cast"
+				 "Target"			"CASTER"
+			}
+		}
+		
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power"					"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"100"
+			}
+		}
+	}
+  
+//-------------------
+// Dummy stuff
+//-------------------
+  
+  "reflex_dummy_unit"
+  {
+    "AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+    "MaxLevel"                      "1"
+    
+    "Modifiers"
+		{
+			"dummy_unit"
+      {
+          "Passive"                        "1"
+          "IsHidden"                        "1"    
+          "States"
+          {
+              "MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+		}
+  }
+  
+  "reflex_empty1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	"reflex_empty2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	"reflex_empty3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	"reflex_empty4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	"reflex_empty5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+	
+	"reflex_empty6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+	}
+}
+
